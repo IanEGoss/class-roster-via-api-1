@@ -1,40 +1,41 @@
-/* My Styles */
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(50px, auto);
-    grid-gap: 10px;
+.roster {
+  display: grid;
+  grid-gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 250px 150px;
 }
 
-.gallery figure {
-    background: gray;
+.roster figure, 
+.roster img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.roster img {
+  display: block;
+  object-fit: cover;
 }
 
-.gallery img {
-    /* fit images to container */
-    object-fit: cover;
-    height: 300px;
-    width: 100%;
-    
+.roster figure {
+  position: relative;
+} 
+
+.roster figcaption {
+  font-size: 1.5em;
+  color: white;
+  background: rgba(0, 0, 0, 0.46);
+  
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  width: 100%;
 }
-* {
-    outline: 1px dotted gray;
+
+@media (min-width: 480px) {
+  .roster :first-child {
+    grid-area: 1/1/span 2/span 2;
   }
-  
-  body {
-    display: flex;
-    flex-wrap: wrap;
+  .roster :nth-child(2n) {
+    grid-column: span 2;
   }
-  figure {
-    background: turquoise;
-    width: 400px;
-  }
-  
-  figcaption {
-    background: orange;
-  }
-  
-  figure img {
-    border: 4px solid teal;
-  }
+}
