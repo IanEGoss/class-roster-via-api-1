@@ -57,6 +57,9 @@ fetch( dataSource )
       const template = `
         <figure>
          <figcaption> ${student.Name} </figcaption>
+         <figcaption> ${student.Emoji} </figcaption>
+         <figcaption> ${student.Superpower} </figcaption>
+         <figcaption> ${student.Quote} </figcaption>
             <img src="${student.Image}" alt="Student Name">
          </figure>
       `
