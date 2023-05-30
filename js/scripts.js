@@ -2,7 +2,6 @@
 
 
 // Data source for roster
-const url ="";
 // Note: We're using NoCode API to make connecting to AirTable easier
 const url = "https://v1.nocodeapi.com/pmanikoth/airtable/rsqhQzAAKcMyyPPW?tableName=Roster";
 
