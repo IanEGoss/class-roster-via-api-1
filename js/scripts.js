@@ -40,35 +40,35 @@ fetch(url)
   });
 */
 // Data source
-const dataSource = "https://assets.codepen.io/16425/spring23web3.json";
 
-// fetch
-fetch( dataSource )
-.then( response => response.json())
-.then( data  => {
+  const dataSource = "https://assets.codepen.io/16425/spring23web3.json";
 
-    // get container for data
-    const roster = document.querySelector(".roster");
- 
-    // for each RECORD, insert into parent
-    data.forEach( (student) => { 
-      
-      // template to reuse
-      const template = `
-        <figure>
-         <figcaption> ${student.Name} </figcaption>
-         <figcaption> ${student.Emoji} </figcaption>
-         <figcaption> ${student.Superpower} </figcaption>
-         <figcaption> ${student.Quote} </figcaption>
-            <img src="${student.Image}" alt="Student Name">
-         </figure>
-      `
-    
-      roster.insertAdjacentHTML('afterbegin', template );
-      
+  // fetch
+  fetch(dataSource)
+    .then((response) => response.json())
+    .then((data) => {
+      // get container for data
+      const roster = document.querySelector(".roster");
+  
+      // for each RECORD, insert into parent
+      data.forEach((student) => {
+        // template to reuse
+        const template = `
+          <figure>
+          <img src="${student.Image}" alt="Student Name">
+          <figcaption>
+           <h1>${student.Name}</h1> 
+           ${student.Emoji}
+           <h2>${student.Superpower}</h2>
+            ${student.Quote} </figcaption>
+              
+           </figure>
+        `;
+  
+        roster.insertAdjacentHTML("afterbegin", template);
+      });
     });
   
-});
 
     // console.log(data);
     // console.log(data[9].Superpower);
